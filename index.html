@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <style>
+        </style>
+        <body>
+            <table id="employeeTable">
+                <tr id="TableHeader">
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                </tr>
+                <tr id="empRecords"></tr>
+            </table>
+         <script>
+             let officers = [
+      { id: 1, name: 'moe',Position: 'CEO',Salary:80000 },
+      { id: 2, name: 'larry',Position:'CTO' ,Salary:70000 },
+      { id: 3, name: 'shep',Position:'Security Officer',Salary:1000000},
+	{ id: 4, name: 'Curly',Position:'CPO',Salary:75000},
+     ];
+     const list = document.querySelector('#empRecords')
+     const render = () =>{
+         
+         const html = officers.map(officer =>{return`<tr><td>${officer.id}</td><td>${officer.name}</td><td>${officer.Position}</td><td>${officer.Salary}</td>>`}).join('');
+        
+        list.innerHTML=html;
+     };
+     render();
+         </script>   
+        </body>
+    </head>
+</html>
