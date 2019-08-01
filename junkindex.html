@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <style>
+            table {
+            border: 1px solid black;
+            width: 50%;
+            }
+            td,th{
+                border: 1px solid black;
+            }
+        </style>
+        <body>
+            <table id="employeeTable">
+                <tr id="tableHeader"><th>Employee ID</th><th>Employee Name</th><th>Position</th><th>Salary</th></tr>
+                
+            </table>
+         <script>
+        const list = document.querySelector('#employeeTable')
+        const header = document.querySelector('#tableHeader')
+        /*const usersTable = new TableBuilder(
+      [
+        {
+          title: 'Name',
+          key: 'name'
+        },
+        {
+          title: 'Position',
+          key: 'role'
+        },
+        {
+          title: 'Salary',
+          key: 'salary',
+          type: 'number'
+        }
+
+      ],
+      [
+        {
+          name: 'Moe',
+          role: 'CEO',
+          salary: 80000
+        },
+        {
+          name: 'Larry',
+          role: 'CTO',
+          salary: 70000
+        },
+        {
+          name: 'Curly',
+          role: 'CPO',
+          salary: 75000
+        },
+        {
+          name: 'Shep',
+          role: 'Security Officer',
+          salary: 1000000 
+        }
+      ],
+      '#usersTable'//id of DOM element
+    );*/
+    //usersTable.init();
+        const officers = [
+        { id: 1, name: 'moe',Position: 'CEO',                 Salary:80000 },
+        { id: 2, name: 'larry',Position:'CTO' ,               Salary:70000 },
+        { id: 3, name: 'shep',Position:'Security Officer',    Salary:1000000},
+	    { id: 4, name: 'Curly',Position:'CPO',                Salary:75000}
+        ];
+    const officers=document.querySelector('#usersTable')
+     console.log(officers);
+     header.addEventListener('click',(ev)=>{
+        const col=ev.target;
+        console.log(col);
+        console.log(ev.target);
+     });
+     function sortTable(n){
+
+     };
+     function TableBuilder(tableArray,dataArray,selector){
+        const html = dataArray.map(officer =>{return `<tr>
+         <td>${officer.name}</td>
+         <td>${officer.role}</td>
+         <td>${officer.Salary}</td></tr>`}).join('');
+        return  `<tr id="tableHeader"><th>Employee ID</th><th>Employee Name</th><th>Position</th><th>Salary</th></tr>`+html;
+     }
+     const render = () =>{
+         /*const html = officers.map(officer =>{return `<tr>
+         <td>${officer.name}</td>
+         <td>${officer.Position}</td>
+         <td>${officer.Salary}</td></tr>`}).join('');
+        
+        list.innerHTML=`<tr id="tableHeader"><th>Employee Name</th><th>Position</th><th>Salary</th></tr>`+html;*/
+
+     };
+     render();
+         </script>   
+        </body>
+    </head>
+</html>
