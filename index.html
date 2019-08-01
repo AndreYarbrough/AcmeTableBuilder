@@ -8,15 +8,15 @@
             td,th{
                 border: 1px solid black;
             }
-       </style> 
+       </style>
     </head>
     <body>
             <table id="employeeTable">
                     <tr id="tableHeader"><th>Employee Name</th><th>Position</th><th>Salary</th></tr>
-                    
+
                 </table>
         <script>
-            const empTable=document.querySelector()
+            // const empTable=document.querySelector()
             const usersTable = new TableBuilder(
       [
         {
@@ -33,7 +33,7 @@
           type: 'number'
         }
 
-      ],
+      ], // tableHeaderArr
       [
         {
           name: 'Moe',
@@ -53,23 +53,29 @@
         {
           name: 'Shep',
           role: 'Security Officer',
-          salary: 1000000 
+          salary: 1000000
         }
-      ],
-      '#usersTable'//id of DOM element
+      ], // tableDataArr
+      '#usersTable'//id of DOM element, selector
     );
-    console.log(usersTable);
+
 
     usersTable.init();
     class TableBuilder{
+        constructor(tableHeaderArr, tableDataArr, selector){
+            this.name = tableDataArr.map( obj => {
+                obj.name;
+            })
+        }
         /*const html = dataArray.map(officer =>{return `<tr>
          <td>${officer.name}</td>
          <td>${officer.role}</td>
          <td>${officer.salary}</td></tr>`}).join('');
         return  `<tr id="tableHeader"><th>Employee Name</th><th>Position</th><th>Salary</th></tr>`+html;*/
-        
+
     }
-    
+    console.log(usersTable);
+
 
         </script>
     </body>
