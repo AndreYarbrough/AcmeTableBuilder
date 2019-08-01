@@ -1,30 +1,38 @@
 <html>
     <head>
         <style>
+            table {
+            border: 1px solid black;
+            width: 50%;
+            }
+            td,th{
+                border: 1px solid black;
+            }
         </style>
         <body>
             <table id="employeeTable">
-                <tr id="TableHeader">
-                    <th>Employee ID</th>
-                    <th>Employee Name</th>
-                    <th>Position</th>
-                    <th>Salary</th>
-                </tr>
+                
                 <tr id="empRecords"></tr>
             </table>
          <script>
-             let officers = [
-      { id: 1, name: 'moe',Position: 'CEO',Salary:80000 },
-      { id: 2, name: 'larry',Position:'CTO' ,Salary:70000 },
-      { id: 3, name: 'shep',Position:'Security Officer',Salary:1000000},
-	{ id: 4, name: 'Curly',Position:'CPO',Salary:75000},
-     ];
-     const list = document.querySelector('#empRecords')
+        const list = document.querySelector('#employeeTable')
+        const officers = [
+        { id: 1, name: 'moe',Position: 'CEO',                 Salary:80000 },
+        { id: 2, name: 'larry',Position:'CTO' ,               Salary:70000 },
+        { id: 3, name: 'shep',Position:'Security Officer',    Salary:1000000},
+	    { id: 4, name: 'Curly',Position:'CPO',                Salary:75000}
+        ];
+     console.log(officers);
+     
      const render = () =>{
          
-         const html = officers.map(officer =>{return`<tr><td>${officer.id}</td><td>${officer.name}</td><td>${officer.Position}</td><td>${officer.Salary}</td>>`}).join('');
+         const html = officers.map(officer =>{return `<tr>
+         <td>${officer.id}</td>
+         <td>${officer.name}</td>
+         <td>${officer.Position}</td>
+         <td>${officer.Salary}</td></tr>`}).join('');
         
-        list.innerHTML=html;
+        list.innerHTML=`<tr id="TableHeader"><th>Employee ID</th><th>Employee Name</th><th>Position</th><th>Salary</th></tr>`+html;
      };
      render();
          </script>   
