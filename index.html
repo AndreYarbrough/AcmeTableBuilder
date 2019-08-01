@@ -32,7 +32,7 @@
          <td>${officer.name}</td>
          <td>${officer.role}</td>
          <td>${officer.salary}</td></tr>`}).join('');
-        employeeTable.innerHTML =  `<tr id="tableHeader"><th>Employee Name</th><th>Position</th><th>Salary</th></tr>`+html;
+        employeeTable.innerHTML =  `<tr id="tableHeader"><th onclick="sortTable(0)">Employee Name</th><th>Position</th><th>Salary</th></tr>`+html;
 
         }
 
