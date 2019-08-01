@@ -11,11 +11,12 @@
         </style>
         <body>
             <table id="employeeTable">
+                <tr id="tableHeader"><th>Employee ID</th><th>Employee Name</th><th>Position</th><th>Salary</th></tr>
                 
-                <tr id="empRecords"></tr>
             </table>
          <script>
         const list = document.querySelector('#employeeTable')
+        const header = document.querySelector('#tableHeader')
         const officers = [
         { id: 1, name: 'moe',Position: 'CEO',                 Salary:80000 },
         { id: 2, name: 'larry',Position:'CTO' ,               Salary:70000 },
@@ -23,16 +24,22 @@
 	    { id: 4, name: 'Curly',Position:'CPO',                Salary:75000}
         ];
      console.log(officers);
-     
+     header.addEventListener('click',(ev)=>{
+        const col=ev.target;
+        console.log(col);
+        console.log(ev.target);
+     });
+     function sortTable(n){
+
+     };
      const render = () =>{
-         
          const html = officers.map(officer =>{return `<tr>
          <td>${officer.id}</td>
          <td>${officer.name}</td>
          <td>${officer.Position}</td>
          <td>${officer.Salary}</td></tr>`}).join('');
         
-        list.innerHTML=`<tr id="TableHeader"><th>Employee ID</th><th>Employee Name</th><th>Position</th><th>Salary</th></tr>`+html;
+        list.innerHTML=`<tr id="tableHeader"><th>Employee ID</th><th>Employee Name</th><th>Position</th><th>Salary</th></tr>`+html;
      };
      render();
          </script>   
