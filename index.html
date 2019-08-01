@@ -12,7 +12,7 @@
     </head>
     <body>
             <table id="employeeTable">
-                    <tr id="tableHeader"><th>Employee Name</th><th>Position</th><th>Salary</th></tr>
+                    <tr id="tableHeader"><th onclick="sortTable(0)">Employee Name</th><th onclick="sortTable(1)">Position</th><th onclick="sortTable(2)">Salary</th></tr>
 
                 </table>
 
@@ -84,7 +84,9 @@
 
     usersTable.init();
     //console.log(usersTable);
-
+    function sortTable(n){
+            console.log(this.dataArr);
+        }
 
         </script>
     </body>
