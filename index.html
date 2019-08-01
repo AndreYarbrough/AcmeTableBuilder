@@ -60,12 +60,19 @@
     );
 
 
-    usersTable.init();
+    //usersTable.init();
     class TableBuilder{
-        constructor(tableHeaderArr, tableDataArr, selector){
-            this.name = tableDataArr.map( obj => {
-                obj.name;
-            })
+        // constructor(tableHeaderArr, tableDataArr, selector){
+        //     this.name = tableDataArr.map( obj => {
+        //         obj.name;
+        //     })
+        // }
+        constructor(selector) {
+            this.selector = selector;
+        }
+        init() {
+            const hi = this.selector;
+            console.log(hi);
         }
         /*const html = dataArray.map(officer =>{return `<tr>
          <td>${officer.name}</td>
@@ -74,7 +81,7 @@
         return  `<tr id="tableHeader"><th>Employee Name</th><th>Position</th><th>Salary</th></tr>`+html;*/
 
     }
-    console.log(usersTable);
+    //console.log(usersTable);
 
 
         </script>
