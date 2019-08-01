@@ -1,10 +1,22 @@
 <html>
     <head>
        <style>
+           table {
+            border: 1px solid black;
+            width: 50%;
+            }
+            td,th{
+                border: 1px solid black;
+            }
        </style> 
     </head>
     <body>
+            <table id="employeeTable">
+                    <tr id="tableHeader"><th>Employee Name</th><th>Position</th><th>Salary</th></tr>
+                    
+                </table>
         <script>
+            const empTable=document.querySelector()
             const usersTable = new TableBuilder(
       [
         {
@@ -46,10 +58,19 @@
       ],
       '#usersTable'//id of DOM element
     );
+    console.log(usersTable);
+
     usersTable.init();
-    function TableBuilder (tableArray, dataArray,selector){
+    class TableBuilder{
+        /*const html = dataArray.map(officer =>{return `<tr>
+         <td>${officer.name}</td>
+         <td>${officer.role}</td>
+         <td>${officer.salary}</td></tr>`}).join('');
+        return  `<tr id="tableHeader"><th>Employee Name</th><th>Position</th><th>Salary</th></tr>`+html;*/
         
     }
+    
+
         </script>
     </body>
 </html>
